@@ -66,14 +66,14 @@ function showQueueMonitor(data) {
     document.querySelector(".numbers").innerHTML = ""
     for (let i = 0; i < data.ticketsQueue.length; i++) {
         
-        const h4 = document.createElement("h4");
+        const h3 = document.createElement("h3");
         if (data.ticketsQueue[i].time) {
-            h4.textContent = `${data.ticketsQueue[i].id} → ${data.ticketsQueue[i].time}`;
+            h3.textContent = `${data.ticketsQueue[i].id} → ${data.ticketsQueue[i].time}`;
         } else {
-            h4.textContent = `${data.ticketsQueue[i].id}`;
+            h3.textContent = `${data.ticketsQueue[i].id}`;
         }
 
-        document.querySelector('.numbers').appendChild(h4)
+        document.querySelector('.numbers').appendChild(h3)
     }
 
     for (let i = 0; i < data.ticketAlerts.length; i++) {
@@ -89,6 +89,8 @@ function showQueueMonitor(data) {
 
         showAlert(data.ticketAlerts[i])
     }
+
+    const ticketsQueueNow = []
 
     document.querySelector(".workspaces").innerHTML = ""
     for (let i = 0; i < data.workplaces.length; i++) {
@@ -108,6 +110,12 @@ function showQueueMonitor(data) {
                 ticket_status.classList.add("big")
                 ticket_status.innerHTML = data.workplaces[i].ticket_number
             } else if (data.workplaces[i].online && data.workplaces[i].ticket_number != "") {
+
+                ticketsQueueNow.push({
+                    id: data.workplaces[i].ticket_number, 
+                    description: data.workplaces[i].local_description || data.workplaces[i].description
+                })
+
                 ticket_status.classList.add("big")
                 ticket_status.classList.add("yellow")
                 ticket_status.innerHTML = data.workplaces[i].ticket_number
@@ -125,4 +133,18 @@ function showQueueMonitor(data) {
         }
 
     }
+
+    document.querySelector(".numbers-now").innerHTML = ""
+
+    if (ticketsQueueNow.length == 0) {
+        document.querySelector('.numbers-now').innerHTML = "<h4>Запрошень немає 🙂</h4>"
+    } else {
+        for (let i = 0; i < ticketsQueueNow.length; i++) {
+            
+            const h3 = document.createElement("h3");
+            h3.textContent = `${ticketsQueueNow[i].id} → ${ticketsQueueNow[i].local_description || ticketsQueueNow[i].description}`;
+            document.querySelector('.numbers-now').appendChild(h3)
+        }
+    }
+
 }
