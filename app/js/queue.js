@@ -108,6 +108,7 @@ function showQueueMonitor(data) {
             ticket_status.classList.add("ticket")
             if (data.workplaces[i].online && data.workplaces[i].ticket_number != "" && data.workplaces[i].ticket_arrived) {
                 ticket_status.classList.add("big")
+                ticket_status.classList.add("green")
                 ticket_status.innerHTML = data.workplaces[i].ticket_number
             } else if (data.workplaces[i].online && data.workplaces[i].ticket_number != "") {
 
@@ -120,8 +121,7 @@ function showQueueMonitor(data) {
                 ticket_status.classList.add("yellow")
                 ticket_status.innerHTML = data.workplaces[i].ticket_number
             }else if (data.workplaces[i].online && data.workplaces[i].isWorking) {
-                ticket_status.classList.add("green")
-                ticket_status.innerHTML = "Працює"
+                ticket_status.innerHTML = "Очікує"
             } else {
                 ticket_status.innerHTML = "Перерва"
             }
