@@ -24,14 +24,14 @@ h2 {
 }
 
 h3 {
-    font-size: 36px;
-    line-height: 40px;
+    font-size: 40px;
+    line-height: 44px;
     font-weight: 300;
 }
 
 h4 {
-    font-size: 32px;
-    line-height: 36px;
+    font-size: 36px;
+    line-height: 40px;
     font-weight: 300;
 }
 
@@ -52,14 +52,14 @@ body {
 
 .logos {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr;
     grid-column-gap: 12px;
     grid-row-gap: 12px;
     margin-bottom: 24px;
 }
   
 .logos img {
-    height: 55px;
+    height: 60px;
     width: auto;
 }
 
