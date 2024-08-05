@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src data: *; img-src 'self' data:"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src data: *; img-src 'self' data:"
+    />
+  <link rel="stylesheet" href="./css/style-queue.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Черга статус</title>
+</head>
+<body>
+  <div class="flex">
+    <div class="left">
+      <h1>Записи до е-Черги</h1>
+      <div class="workspaces"></div>
+    </div>
+    <div class="right">
+      <div class="logos">
+        <img src="./images/Logo+Character2.png" alt="" srcset="">
+        <img src="./images/egap-logo.svg" alt="">
+        <img src="./images/swiss-logo-footer.svg" alt="">
+        <img src="./images/logo_2.svg" alt="">
+      </div>
+      <h4>Наступні талони</h4>
+      <div class="numbers">
+
+      </div>
+    </div>
+  </div>
+  <div class="clock"></div>
+  <dialog>
+    <div class="dialog-window">
+      <p class="dialog-content"></p>
+    </div>
+  </dialog>
+</body>
+<script type="module" src="./js/queue.js"></script>
+</html>

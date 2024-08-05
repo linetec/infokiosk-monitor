@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' data: https://toolkit.in.ua"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self' data: https://toolkit.in.ua"
+    />
+  <link rel="stylesheet" href="./css/style-default.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Черга статус Оффлайн</title>
+</head>
+<body>
+  <div class="main">
+    <div class="auth-screen">
+      <img src="./images/icon.png" alt="">
+      <h4 class="item">Не вдалося встановити з'єднання з сервером черги.</h4>
+    </div>
+    <div class="buttons-grid alt">
+      <button id="submit-button" class="action-button long alt">Повторити спробу</button>
+    </div>
+  </div>
+  
+</body>
+<script type="module" src="./js/offline-err.js"></script>
+</html>
