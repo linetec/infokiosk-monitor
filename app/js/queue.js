@@ -82,7 +82,7 @@ function showQueueMonitor(data) {
             if (isDialogOn) {
                 setTimeout(showAlert(ticketAlert), 8000)
             } else {
-                const message = `Запрошуємо <br><br><h1>талон №${ticketAlert.id}</h1> <br><br><h2>до ${ticketAlert.local_description}</h2>`
+                const message = `<h2>Запрошуємо</h2> <br><br><h1>талон №${ticketAlert.id}</h1> <br><br><h2>до ${ticketAlert.local_description}</h2>`
                 showDialogue(message)
             }
         }
@@ -142,6 +142,7 @@ function showQueueMonitor(data) {
         for (let i = 0; i < ticketsQueueNow.length; i++) {
             
             const h3 = document.createElement("h3");
+            h3.style.fontWeight = "500"
             h3.textContent = `${ticketsQueueNow[i].id} → ${ticketsQueueNow[i].local_description || ticketsQueueNow[i].description}`;
             document.querySelector('.numbers-now').appendChild(h3)
         }
